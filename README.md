@@ -2,6 +2,7 @@
 
 poo
 
+# POO-class-2
 class perro:
     def __init__(self, nombre, raza):
         self.nombre = nombre
