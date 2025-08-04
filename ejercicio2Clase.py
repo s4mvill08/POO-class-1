@@ -35,7 +35,6 @@ while True:
         lista_productos.append(producto)
         print("El producto ha sido guardado correctamente.")
         
-        #Se muestra la lista de productos
     elif opcion == 2:
         print("Cantidad de productos disponibles: ")
         if len(lista_productos) == 0:
@@ -44,31 +43,25 @@ while True:
             for producto in lista_productos:
                 producto.mostrar_datos()
         
-        # Se crea una lista de productos para vender
     elif opcion == 3:
-        print("productos a vender")
+        #Producto a vender
+        print("Producto a vender: ") 
+        contador = 1
+        for producto in lista_productos:
+            print(contador, producto.nombre, " - Cantidad: ", producto.cantidad)
+            contador = contador + 1
+    
+        numero_de_producto = int(input()) - 1
+    
+        if 0 <= numero_de_producto < len(lista_productos):
+            producto_elegido = lista_productos(numero_de_producto)
+            cantidad_vender = int(input())
         
-        if len(productos) == 0:
-            print("No hay productos para vender")
-        else:
-            numero = 1
-            for p in productos:
-                print(f"{numero}. {producto.nombre} ({producto.cantidad} disponibles)")
-                numero = numero + 1
+        if cantidad_vender <= producto_elegido.cantidad:
+            producto_elegido.cantidad = producto_elegido.cantidad - cantidad_vender
+            print("Vendido")
+            print("Cantidad restante: ", producto_elegido.cantidad)
             
-            numero = int(input()) - 1
-            producto_seleccionado = productos[numero]
-            
-            cantidad_vender = int(input("¿Cuántas unidades quieres vender? "))
-            
-            if cantidad_vender <= producto_seleccionado.cantidad:
-                producto_seleccionado.cantidad = producto_seleccionado.cantidad - cantidad_vender
-                print(f"✓ Venta realizada")
-                print(f"Quedan {producto_seleccionado.cantidad} unidades de {producto_seleccionado.nombre}")
-            else:
-                print(" No hay suficientes unidades disponibles")
-            
-        # Si el usuario quiere salir del programa    
     elif opcion == 0:
         print("Fin del proceso")
         break
