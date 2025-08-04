@@ -66,7 +66,7 @@ while True:
                 print(f"✓ Venta realizada")
                 print(f"Quedan {producto_seleccionado.cantidad} unidades de {producto_seleccionado.nombre}")
             else:
-                print("⚠️ No hay suficientes unidades disponibles")
+                print(" No hay suficientes unidades disponibles")
             
         # Si el usuario quiere salir del programa    
     elif opcion == 0:
