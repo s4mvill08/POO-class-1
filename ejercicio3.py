@@ -1,4 +1,4 @@
-class Banco:
+class cuentas:
     def __init__(self, cuenta, titular, saldo):
         self.cuenta = cuenta
         self.titular = titular
@@ -24,7 +24,7 @@ while True:
         cuenta = input("Número de cuenta: ")
         titular = input("Titular: ")
         saldo = float(input("Saldo inicial: "))
-        nueva_cuenta = Banco(cuenta, titular, saldo)
+        nueva_cuenta = cuentas(cuenta, titular, saldo)
         lista_cuenta.append(nueva_cuenta)
         print("Cuenta creada")
         
