@@ -1,23 +1,25 @@
 import random
 class estudiantes:
-    def __init__(self, nombre, edad, nota1, id):
+    def __init__(self, nombre, edad, nota1, id, materia):
         self.nombre = nombre
         self.edad = edad
         self.nota1 = nota1
         self.id = id
+        self.materia = materia
                  
     def mostrar_datos(self):
         print("nombre:", self.nombre)
         print("edad:", self.edad)
         print("nota1:", self.nota1)
         print("id:", self.id)
+        print("materia:", self.materia)
 
 print("Bienvenido al sistema de gestión de estudiantes")
 lista_estudiantes = []
 
 while True:
     print("Seleccione la opción deseada")
-    print("1. Agregar estudiante")
+    print("1. Agregar información del estudiante")
     print("2. Mostrar la información del estudiante")
     print("0. Salir")
     opcion = int(input())
@@ -32,8 +34,8 @@ while True:
                 if estudiante.id == id:
                     id_existe = True
                     break
-            if id_existe == False:
-                break
+            if id_existe == False:1
+            break
         
         print("Su id es:", id)
         print("Ingrese el nombre")
@@ -42,8 +44,10 @@ while True:
         edad = int(input())
         print("Ingrese su nota1")
         nota1 = float(input())
+        print("Ingrese su materia")
+        materia = input()
                 
-        estudiante = estudiantes(nombre, edad, nota1, id)
+        estudiante = estudiantes(nombre, edad, nota1, id, materia)
         lista_estudiantes.append(estudiante)
         print("Estudiante registrado correctamente")
     
