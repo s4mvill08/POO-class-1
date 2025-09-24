@@ -76,10 +76,16 @@ total_actual = Contador.obtener_total()
 print(f"Total del contador: {total_actual}")
 
 # compile() - Compilar código para ejecutar después
+# Crear un namespace personalizado
+print("=== Solución 2: Diccionario como namespace ===")
 codigo = "resultado = 5 + 3"
 codigo_compilado = compile(codigo, '<string>', 'exec')
-exec(codigo_compilado)
-print(f"Resultado del código compilado: {resultado}")
+
+mi_namespace = {}
+exec(codigo_compilado, mi_namespace)
+print(f"Resultado del código compilado: {mi_namespace['resultado']}")
+
+print("\n" + "="*50 + "\n")
 
 # complex() - Crear número complejo
 numero_complejo = complex(3, 4)
