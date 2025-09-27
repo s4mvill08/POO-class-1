@@ -1,39 +1,37 @@
+class Persona:
+    def __init__(self, nombre, edad):
+        self._nombre = nombre
+        self._edad = edad
 
-class Usuario:
-     def _init_(self, nombre, correo):
-         self.__nombre = nombre
-         self.__correo = correo
+    # Getter para el nombre
+    @property
+    def nombre(self):
+        return self._nombre
 
-     def get_correo(self):
-         return "El correo es " + self.__correo
+    # Setter para el nombre
+    @nombre.setter
+    def nombre(self, nuevo_nombre):
+        self._nombre = nuevo_nombre
 
-     def get_nombre(self):
-         return self.__nombre
-    
-     def set_nombre(self, nombre):
-        if nombre != "Camilo" and nombre != "Samuel":
-            return "No puedes cambiar el nombre"
+    # Getter para la edad
+    @property
+    def edad(self):
+        return self._edad
+
+    # Setter para la edad
+    @edad.setter
+    def edad(self, nueva_edad):
+        if nueva_edad > 0:
+            self._edad = nueva_edad
         else:
-            self.__nombre = nombre
-            return "Nombre cambiando correctamente"
+            raise ValueError("La edad debe ser un número positivo.")
 
-usuario = Usuario("Samuel", "sm@gmail.com")
-print(usuario.get_nombre())
-print(usuario.get_correo())
-usuario.get_nombre = "Camilo"
-print(usuario.get_nombre)
+# Ejemplo de uso
+persona = Persona("Juan", 25)
+print(persona.nombre)  # Juan
+persona.nombre = "Carlos"
+print(persona.nombre)  # Carlos
 
-"""class Usuario:
-    def _init_(self, nombre="sin nombre", correo="sin correo", *gustos):
-        self.__nombre = nombre
-        self.__correo = correo
-        self.gustos = gustos
-
-    def presentar(self, **datos):
-        print("Hola, soy", self.__nombre)
-        print("Mis gustos son", self.gustos)
-        print("Datos adicionales: ", datos)
-        print("Correo: ",self.__correo)
-
-usuario = Usuario("Samuel", "Samuel@gmail.com", "leer", "nadar", "ir al cine")
-usuario.presentar()"""
+print(persona.edad)  # 25
+persona.edad = 30
+print(persona.edad)  # 30

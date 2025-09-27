@@ -46,11 +46,10 @@ class Departamento:
             print("No encontrado")
 
     def buscar_empleado_por_id(self, id_empleado):
-        """Busca un empleado por ID y lo retorna (método público que respeta encapsulamiento)"""
-        for empleado in self.__empleados:
-            if empleado.get_id() == id_empleado:
-                return empleado
-        return None
+            for empleado in self.__empleados:
+                if empleado.get_id() == id_empleado:
+                    return empleado
+            return None
 
 class Empleado:
     def __init__(self, nombre, id, salarioP):
