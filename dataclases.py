@@ -8,7 +8,7 @@ class Persona1:
     __nombre: str #=field(default=False)
     edad: int = field(default=35)
     
-    property    
+    @property    
     def retornar_edad_por_2(self) -> int:
         return self.edad *2     #or -> None:
            
