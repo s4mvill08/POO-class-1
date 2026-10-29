@@ -1,3 +1,3 @@
-# POO-class-1
+# POO-class
 
-Ejercicios de POO semestre 2025/6
+Ejercicio de POO semestre
